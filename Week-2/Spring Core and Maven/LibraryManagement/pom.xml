@@ -8,17 +8,46 @@
     <artifactId>library-management</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <!-- Defining a variable for the Spring version to keep it consistent -->
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <spring.version>5.3.31</spring.version>
     </properties>
 
     <dependencies>
-        <!-- Spring Context Dependency -->
+        <!-- 1. Spring Context (Already here from Ex 1) -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>5.3.31</version>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!-- 2. Spring AOP -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!-- 3. Spring WebMVC -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
         </dependency>
     </dependencies>
+
+    <!-- Configuring the Maven Compiler Plugin for Java 1.8 -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
